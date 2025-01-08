@@ -75,8 +75,8 @@ Playful Pages is an interactive app for kids where AI generates bedtime stories 
 
 #### AI Services (Azure OpenAI):
 
-- **GPT-4o Mode**: Generates a fully personalized story based on the provided inputs (story type, child's name, and gender). This ensures the story is engaging, age-appropriate, and contextually relevant.
-- **DALL·E Mode**: Creates visual illustrations for the story by analyzing the generated story's context. Each image complements the narrative, enhancing the storytelling experience.
+- **GPT-4o Model**: Generates a fully personalized story based on the provided inputs (story type, child's name, and gender). This ensures the story is engaging, age-appropriate, and contextually relevant.
+- **DALL·E Model**: Creates visual illustrations for the story by analyzing the generated story's context. Each image complements the narrative, enhancing the storytelling experience.
 
 #### Workflow
 
