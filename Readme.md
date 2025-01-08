@@ -30,10 +30,15 @@ Playful Pages is an interactive app for kids where AI generates bedtime stories 
     ```sh
     npm install
     ```
-2. Start the React Native development server:
+2. Prebuild the project:
+    ```sh
+    npx expo prebuild
+    ```
+3. Start the React Native development server:
     ```sh
     npm start
     ```
+
 
 ### Back-end Setup
 
