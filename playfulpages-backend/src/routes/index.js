@@ -31,7 +31,9 @@ router.post("/generate-story", async (req, res) => {
             ],
             [
                 "human",
-                `Write a 10-page story. The main character name is ${name} and is a ${gender}, and the type of story is ${storyType}. Each page should be a single short sentence advancing the story, formatted as a JSON object with a key 'story' containing an array of objects, each having 'page' and 'story' keys.`
+                `Write a 10-page story. The main character is ${name}, a ${gender}, who experiences a ${storyType}. 
+                Ensure the story includes unique surprises, a clever twist, and vivid details. Each page must have a single 
+                short sentence and follow the JSON schema.`
             ]
         ];
 

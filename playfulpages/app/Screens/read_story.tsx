@@ -10,6 +10,7 @@ import PagerView from 'react-native-pager-view';
 import Animated, { useHandler, useEvent } from 'react-native-reanimated';
 import axios from 'axios';
 import { router, useLocalSearchParams, useNavigation } from "expo-router";
+import FastImage from 'react-native-fast-image'
 
 
 const AnimatedPager = Animated.createAnimatedComponent(PagerView);
@@ -58,7 +59,7 @@ export default function ReadStory() {
     { "image": null, "page": 9, "story": "At the tower, Leo used the key to unleash a wave of light." },
     { "image": null, "page": 10, "story": "The forest was saved, and Leo learned the value of courage and cleverness." }
   ];
-  
+
   const handler = usePagerScrollHandler({
     onPageScroll: (e: any) => {
       'worklet';
@@ -68,7 +69,7 @@ export default function ReadStory() {
 
   const getStories = async () => {
     try {
-      const response = await axios.post('http://192.168.89.193:3000/api/generate-story', {
+      const response = await axios.post('http://192.168.0.104:3000/api/generate-story', {
         gender: "male",
         storyType: router_param.story_type,
         name: "vikash"
@@ -136,18 +137,18 @@ export default function ReadStory() {
                       }
                     </View>
                     <View style={{ flex: 0.8, justifyContent: 'center', alignItems: 'center' }}>
-                      <Image
-                        source={
-                          item.image
-                            ? { uri: item.image }
-                            : require('@/assets/images/image_failed.png')
-                        }
+                      <FastImage
                         style={{
                           height: 300,
                           width: 300,
-                          resizeMode: 'contain',
-                          borderRadius: 30
+                          borderRadius: 30,
                         }}
+                        source={
+                          item.image
+                            ? { uri: item.image, priority: FastImage.priority.high }
+                            : require('@/assets/images/image_failed.png')
+                        }
+                        resizeMode="contain"
                       />
                       <CustomText fontFamily="Fredoka-Bold" style={{ color: "#4B0082", fontSize: 18, marginTop: 30, textAlign: 'center', marginHorizontal: 15, backgroundColor: 'pink', borderRadius: 10, lineHeight: 30 }}>{item.story}</CustomText>
 
